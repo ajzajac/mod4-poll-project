@@ -14,3 +14,4 @@ poll2 = Poll.create(message: "See me yet??", user_id: 2)
 
 comment1 = Comment.create(content: "Cool comment is working", user_id: 1, poll_id: 1)
 comment2 = Comment.create(content: "Comment is working", user_id: 2, poll_id: 2)
+comment3 = Comment.create(content: "Comment is still working", user_id: 1, poll_id: 2)
