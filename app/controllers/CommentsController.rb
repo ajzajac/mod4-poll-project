@@ -6,6 +6,8 @@ def index
 end
 
 def show
+    @comment = Comment.find(params[:id].to_i)
+    render json: @comment, status: :ok
 end
 
 def create
