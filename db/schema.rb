@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_11_11_153840) do
   create_table "polls", force: :cascade do |t|
     t.string "message"
     t.integer "user_id"
+    t.integer "yay"
+    t.integer "nay"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

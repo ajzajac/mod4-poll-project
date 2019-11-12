@@ -11,6 +11,20 @@ end
     render json: @poll, status: :ok
   end
 
+  def create
+    @poll = Poll.create(
+        message: params[:message],
+        user_id: params[:user_id],
+        yay: params[:yay],
+        nay: params[:nay]
+    )
+
+    # @poll = Poll.new( message: params[:message], user_id: params[:user_id] )
+    # @poll.save
+    render json: {poll: @poll}
+
+  end
+
   def comment
     comment = Comment.create({
       content: params[:content],
