@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, :polls, :comments, :votes
 
-
   post "/signup", to: "users#create"
   post "/login", to: "login#login"
-  post "/movies/:id/reviews", to: "movies#review"
 
+  get '/auto_login', to: "login#auto_login"
 end

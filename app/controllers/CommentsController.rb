@@ -11,6 +11,12 @@ def show
 end
 
 def create
+    @comment = Comment.create(
+        content: params[:content],
+        user_id: params[:user_id],
+        poll_id: params[:poll_id]
+    )
+    render json: {comment: @comment}
 end
 
 def update

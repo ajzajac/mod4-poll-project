@@ -1,8 +1,11 @@
 class VotesController < ApplicationController
 
-    def create
-
+    def index
+        @votes = Vote.all
+        render json: @votes
     end
-    
+
+    def create
+    end
 
 end
