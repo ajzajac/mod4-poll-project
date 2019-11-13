@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::API
     
- def encode_token(id)
+    def encode_token(id)
         JWT.encode({user_id: id}, "super_secret_code")
-      end
+    end
     
     def get_auth_header
         request.headers["Authorization"]

@@ -3,6 +3,7 @@ class PollsController < ApplicationController
 def index
     @polls = Poll.all
     render json: @polls
+    # render json: PollSerializer.new(@polls).serialize
 end
 
   def show
@@ -12,11 +13,13 @@ end
 
   def create
     @poll = Poll.create(
-        message: params[:message],
-        user_id: params[:user_id],
-        yay: params[:yay],
-        nay: params[:nay],
-        expiration: params[:expiration]
+        # message: params[:message],
+        # user_id: params[:user_id],
+        # yay: params[:yay],
+        # nay: params[:nay],
+        # expiration: params[:expiration],
+        # options: params[:options]
+        pollParams
     )
 
     # @poll = Poll.new( message: params[:message], user_id: params[:user_id] )
@@ -52,7 +55,7 @@ end
   private
 
   def pollParams 
-    params.require(:poll).permit(:id, :message, :user_id, :yay, :nay, :expiration)
+    params.require(:poll).permit(:id, :message, :user_id, :yay, :nay, :expiration, :option1, :option2)
   end
 
 
