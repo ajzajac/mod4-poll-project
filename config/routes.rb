@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   post "/login", to: "login#login"
 
+  patch '/polls/:id', to: 'polls#update'
+
 end
