@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create(username: "Andrew")
-user2 = User.create(username: "Justin")
+# user1 = User.create(username: "Andrew")
+# user2 = User.create(username: "Justin")
 
 # poll1 = Poll.create(message: "Hey can you see me?", user_id: 1, yay: 0, nay: 0, expiration: '2000-01-01T01:02:00.000Z')
 # poll2 = Poll.create(message: "See me yet??", user_id: 2, yay: 0, nay: 0, expiration: '2000-01-01T01:02:00.000Z')

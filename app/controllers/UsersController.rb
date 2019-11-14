@@ -14,6 +14,7 @@ def create
     #   image: params[:image]
     # )
     user = User.new(userParams)
+    # user.image.attach(params[:image])
     if user.save
       token = encode_token(user.id)
       render json: {user: user, token: token}
@@ -25,7 +26,7 @@ def create
   private
 
   def userParams
-    params.require(:user).permit(:username, :image)
+    params.require(:user).permit(:username)
   end
 
 end
