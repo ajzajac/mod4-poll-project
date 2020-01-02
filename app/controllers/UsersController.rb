@@ -5,23 +5,20 @@ def index
     render json: @users
 end
 
-def show
-    
+def show    
 end
 
 def create
-    @user = User.new(
-        name: params[:name]
-        money: params[:money]
+    user = User.new(
+      username: params[:username]
     )
-    if @user.save
-        render json: {user: @user}
+    if user.save
+      token = encode_token(user.id)
+      render json: {user: user, token: token}
     else
-        render json: {errors @user.errors.full_messages}
-end
-
-def delete
-end
+      render json: {errors: user.errors.full_messages}
+    end
+  end
 
 
 end
