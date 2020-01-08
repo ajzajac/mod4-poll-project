@@ -6,8 +6,13 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use postgresql as the database for Active Record
- gem 'pg'
+group :development do
+  gem 'sqlite3'
+end
 
+group :production do
+  gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
