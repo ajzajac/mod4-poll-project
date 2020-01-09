@@ -9,9 +9,12 @@ def show
 end
 
 def create
-    user = User.new(
-      username: params[:username]
-    )
+    # user = User.new(
+    #   username: params[:username],
+    #   image: params[:image]
+    # )
+    user = User.new(userParams)
+    # user.image.attach(params[:image])
     if user.save
       token = encode_token(user.id)
       render json: {user: user, token: token}
@@ -20,5 +23,10 @@ def create
     end
   end
 
+  private
+
+  def userParams
+    params.require(:user).permit(:username)
+  end
 
 end
